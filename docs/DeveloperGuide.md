@@ -257,8 +257,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | user                                       | view the deadline of missions or quests  | know when I can start marking them                           |
 | `* *`    | user with a crowded calendar               | add consultations              | keep track of my schedule easily                                       |
 | `* *`    | user                                       | list my consultations          | be reminded of my schedule                                             |
-| `* *`    | user                                       | view deadlines for missions and quests | can schedule when to mark them                                 |
-| `* *`    | user                                       | add my own tasks               | can be consolidate all TA and non-TA scheduling into Jarvis.           | 
 
 *{More to be added}*
 
@@ -486,7 +484,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Non-Functional Requirements
 
-1.  Should work on any _mainstream Operating System_ as long as it has Java `11` or above installed.
+1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
 2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 4. The system should be backward compatible with data produced by earlier versions of the system.
@@ -494,13 +492,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 6. The system should respond within one second.
 7. For now, the product is not required to handle the printing of reports.
 8. The application should not use copyrighted images anywhere in the UI.
-9.  Should be easy for the user to migrate all information in Jarvis onto a separate computer.
+
 
 *{More to be added}*
 
 ### Glossary
 
-* **Mainstream Desktop Operating System**: Windows, Linux, Unix, OS-X
+* **Mainstream OS**: Windows, Linux, Unix, OS-X
 * **Private contact detail**: A contact detail that is not meant to be shared with others
 * **Mastery Check**: Type of special consultation that is recorded and graded in the CS1101S module.
 
