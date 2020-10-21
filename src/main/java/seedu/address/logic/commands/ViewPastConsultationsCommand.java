@@ -18,9 +18,6 @@ public class ViewPastConsultationsCommand extends ViewCommand {
     @Override
     public CommandResult execute(Model model) {
         requireNonNull(model);
-
-        assert model.getConsultations(PREDICATE_SHOW_PAST_CONSULTATIONS) != null;
-
         String result = model.getConsultations(PREDICATE_SHOW_PAST_CONSULTATIONS).toString();
         if (result == null) {
             throw new AssertionError();
