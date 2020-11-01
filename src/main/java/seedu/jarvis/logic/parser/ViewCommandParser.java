@@ -62,8 +62,15 @@ public class ViewCommandParser implements Parser<ViewCommand> {
         // result will be as such: {-s, Alex, Yeoh}
         String[] inputsAfterCommandType = trimmedArgs.split("\\s+");
         assert inputsAfterCommandType.length > 0 : "String array of the arguments is empty";
-        Flag commandFlag = ParserUtil.parseFlag(inputsAfterCommandType[0]);
-        // Problem is what if additional params here can mean more than just student name?
+
+        Flag commandFlag;
+        try {
+            commandFlag = ParserUtil.parseFlag(inputsAfterCommandType[0]);
+        } catch (ParseException ex) {
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, ViewCommand.MESSAGE_USAGE));
+        }
+
         boolean argsHasAdditionalParams = inputsAfterCommandType.length > 1;
         Optional<Name> optionalStudentName = Optional.empty();
 
@@ -126,8 +133,6 @@ public class ViewCommandParser implements Parser<ViewCommand> {
 
         case VIEW_PAST_MASTERY_CHECK_LIST:
             return new ViewPastMasteryChecksCommand();
-
-        // add the other cases here
 
         default:
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ViewCommand.MESSAGE_USAGE));

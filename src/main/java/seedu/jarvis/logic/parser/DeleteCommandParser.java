@@ -33,7 +33,14 @@ public class DeleteCommandParser implements Parser<DeleteCommand> {
 
         // split the string trimmedArgs with regex of one or more whitespace characters.
         String[] nameKeywords = trimmedArgs.split("\\s+");
-        Flag commandFlag = ParserUtil.parseFlag(nameKeywords[0]);
+
+        Flag commandFlag;
+        try {
+            commandFlag = ParserUtil.parseFlag(nameKeywords[0]);
+        } catch (ParseException ex) {
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_DELETE_USAGE));
+        }
 
         switch(commandFlag.getFlag()) {
         case DELETE_TASK:
