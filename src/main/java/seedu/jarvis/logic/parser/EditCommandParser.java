@@ -19,7 +19,6 @@ import seedu.jarvis.logic.commands.edit.EditLoginCommand;
 import seedu.jarvis.logic.commands.edit.EditLoginCommand.EditLoginDescriptor;
 import seedu.jarvis.logic.commands.edit.EditStudentCommand;
 import seedu.jarvis.logic.commands.edit.EditStudentCommand.EditPersonDescriptor;
-import seedu.jarvis.logic.commands.view.ViewCommand;
 import seedu.jarvis.logic.parser.exceptions.ParseException;
 import seedu.jarvis.model.flag.Flag;
 
