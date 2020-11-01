@@ -49,7 +49,14 @@ public class AddCommandParser implements Parser<AddCommand> {
 
         // split the string trimmedArgs with regex of one or more whitespace characters.
         String[] nameKeywords = trimmedArgs.split("\\s+");
-        Flag commandFlag = ParserUtil.parseFlag(nameKeywords[0]);
+
+        Flag commandFlag;
+
+        try {
+            commandFlag = ParserUtil.parseFlag(nameKeywords[0]);
+        } catch (ParseException ex) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_ADD_USAGE));
+        }
 
         int length = nameKeywords.length;
         boolean taskHasDescription = length > 1;

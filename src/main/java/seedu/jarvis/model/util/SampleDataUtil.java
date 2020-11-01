@@ -27,7 +27,7 @@ public class SampleDataUtil {
 
     public static Mission[] getSampleMissions() {
         return new Mission[] {
-            new Mission("Fractal Dimensions", "Due: 26th August, 23:59", false),
+            new Mission("Fractal Dimensions", "Due: 26th November, 23:59", false),
             new Mission("Musical Notes", "Due: 12th October, 23:59", true),
             new Mission("Reuse Pairs", "Due: 18th October, 23:59", true),
             new Mission("Streams", "Due: 20th October, 23:59", false),
