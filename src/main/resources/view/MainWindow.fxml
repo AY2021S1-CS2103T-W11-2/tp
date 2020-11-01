@@ -93,18 +93,18 @@
         </StackPane>
 
         <StackPane VBox.vgrow="NEVER" fx:id="resultDisplayPlaceholder" styleClass="pane-with-border"
-                   minHeight="100" prefHeight="100" maxHeight="100">
+                   minHeight="100" prefHeight="200" maxHeight="200">
           <padding>
             <Insets top="4" right="4" bottom="4" left="4"/>
           </padding>
         </StackPane>
 
-        <TabPane fx:id="tabPane" side="LEFT" rotateGraphic="true" minWidth="-Infinity" prefWidth="680.0"
+        <TabPane fx:id="tabPane" side="LEFT" rotateGraphic="true" minWidth="-Infinity"
                  tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
           <Tab fx:id="studentTab">
             <graphic>
               <Group>
-                <Label text="Student" rotate="90"/>
+                <Label text="Student" rotate="90" styleClass="tab-label"/>
               </Group>
             </graphic>
             <VBox fx:id="studentList" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">
@@ -119,7 +119,7 @@
           <Tab fx:id="missionTab">
             <graphic>
               <Group>
-                <Label text="Mission" rotate="90"/>
+                <Label text="Mission" rotate="90" styleClass="tab-label"/>
               </Group>
             </graphic>
             <VBox fx:id="missionList" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">
@@ -134,7 +134,7 @@
           <Tab fx:id="questTab">
             <graphic>
               <Group>
-                <Label text="Quest" rotate="90"/>
+                <Label text="Quest" rotate="90" styleClass="tab-label"/>
               </Group>
             </graphic>
             <VBox fx:id="questList" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">
@@ -149,7 +149,7 @@
           <Tab fx:id="consultationTab">
             <graphic>
               <Group>
-                <Label text="Consultation" rotate="90"/>
+                <Label text="Consultation" rotate="90" styleClass="tab-label"/>
               </Group>
             </graphic>
             <VBox fx:id="consultationList" styleClass="pane-with-border" minWidth="340" prefWidth="340"
@@ -165,7 +165,7 @@
             <Tab fx:id="masteryCheckTab">
             <graphic>
                 <Group>
-                    <Label text="Mastery Check" rotate="90"/>
+                    <Label text="Mastery Check" rotate="90" styleClass="tab-label"/>
                 </Group>
             </graphic>
             <VBox fx:id="masteryCheckList" styleClass="pane-with-border" minWidth="340" prefWidth="340"
@@ -181,7 +181,7 @@
           <Tab fx:id="taskTab">
             <graphic>
               <Group>
-                <Label text="Task" rotate="90"/>
+                <Label text="Task" rotate="90" styleClass="tab-label"/>
               </Group>
             </graphic>
             <VBox fx:id="taskList" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">

@@ -39,27 +39,6 @@
     -fx-max-height: 0;
 }
 
-.tab-top {
-    -fx-background-color: derive(#1d1d1d, 20%);
-    -fx-border-width: 4 4 4 0;
-    -fx-border-color: #4cc3a8 #4cc3a8 #4cc3a8 transparent;
-    -fx-text-fill: white;
-}
-
-.tab-middle {
-    -fx-background-color: derive(#1d1d1d, 20%);
-    -fx-border-width: 4 0 4 0;
-    -fx-border-color: #4cc3a8 transparent #4cc3a8 transparent;
-    -fx-text-fill: white;
-}
-
-.tab-bottom {
-    -fx-background-color: derive(#1d1d1d, 20%);
-    -fx-border-width: 4 0 4 2;
-    -fx-border-color: #4cc3a8 transparent #4cc3a8 #4cc3a8;
-    -fx-text-fill: white;
-}
-
 .table-view {
     -fx-base: #1d1d1d;
     -fx-control-inner-background: #1d1d1d;
@@ -384,8 +363,31 @@
 }
 
 .tab-pane .tab-header-area .tab {
-    -fx-pref-height: 130;
-    -fx-pref-width: 30;
+    -fx-pref-height: 160;
+    -fx-pref-width: 40;
+    -fx-background-color: derive(#1d1d1d, 20%);
+    -fx-text-fill: #4cc3a8;
+}
+
+.tab-pane *.tab-header-background {
+    -fx-background-color: derive(#1d1d1d, 20%);
+    -fx-text-fill: #4cc3a8;
+}
+
+.tab-label {
+    -fx-text-fill: #4cc3a8;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: #4cc3a8;
+    -fx-focus-color: #4cc3a8;
+    -fx-faint-focus-color: #4cc3a8;
+}
+
+#tabPane .tab:selected {
+    -fx-border-color: #4cc3a8;
+    -fx-focus-color: #4cc3a8;
+    -fx-faint-focus-color: #4cc3a8;
 }
 
 .date_label {
