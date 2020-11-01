@@ -73,10 +73,10 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT">
                     <VBox>
-                      <Label fx:id="week" text="Week 11: " styleClass="date_label"/>
+                      <Label fx:id="week" styleClass="date_label"/>
                     </VBox>
                     <VBox>
-                      <Label fx:id="topic" text="Streams" styleClass="topic_label"/>
+                      <Label fx:id="topic" styleClass="topic_label"/>
                     </VBox>
                   </HBox>
                   <HBox alignment="CENTER_RIGHT">

@@ -16,8 +16,8 @@ import seedu.jarvis.commons.core.LogsCenter;
  */
 public class HelpWindow extends UiPart<Stage> {
 
-    public static final String USERGUIDE_URL = "https://ay2021s1-cs2103t-w11-2.github.io/tp/UserGuide.html";
-    public static final String HELP_MESSAGE = "Please refer to the user guide by clicking the button.";
+    private static final String USER_GUIDE_URL = "https://ay2021s1-cs2103t-w11-2.github.io/tp/UserGuide.html";
+    private static final String HELP_MESSAGE = "Please refer to the user guide by clicking the button.";
 
     private static final Logger logger = LogsCenter.getLogger(HelpWindow.class);
     private static final String FXML = "HelpWindow.fxml";
@@ -97,7 +97,7 @@ public class HelpWindow extends UiPart<Stage> {
     private void openLink() {
         try {
             Desktop.getDesktop()
-                    .browse(URI.create(USERGUIDE_URL));
+                    .browse(URI.create(USER_GUIDE_URL));
         } catch (IOException ex) {
             System.out.println(ex);
         }

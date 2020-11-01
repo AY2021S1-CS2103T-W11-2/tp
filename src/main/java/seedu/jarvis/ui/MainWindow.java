@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.logging.Logger;
 
 import javafx.event.ActionEvent;
@@ -26,6 +27,8 @@ import seedu.jarvis.logic.commands.CommandResult;
 import seedu.jarvis.logic.commands.CommandTargetFeature;
 import seedu.jarvis.logic.commands.exceptions.CommandException;
 import seedu.jarvis.logic.parser.exceptions.ParseException;
+import seedu.jarvis.model.topic.Topic;
+import seedu.jarvis.model.topic.Topics;
 
 /**
  * The Main Window. Provides the basic application layout containing
@@ -34,6 +37,9 @@ import seedu.jarvis.logic.parser.exceptions.ParseException;
 public class MainWindow extends UiPart<Stage> {
 
     private static final String FXML = "MainWindow.fxml";
+    private static final String SEMESTER_START_DATE = "10 08 2020";
+    private static final String USER_GUIDE_URL = "https://ay2021s1-cs2103t-w11-2.github.io/tp/UserGuide.html";
+    private static final String SOURCE_ACADEMY_URL = "https://sourceacademy.nus.edu.sg/login";
 
     private final Logger logger = LogsCenter.getLogger(getClass());
 
@@ -107,6 +113,11 @@ public class MainWindow extends UiPart<Stage> {
     @FXML
     private Label greeting;
 
+    @FXML
+    private Label week;
+
+    @FXML
+    private Label topic;
     /**
      * Creates a {@code MainWindow} with the given {@code Stage} and {@code Logic}.
      */
@@ -127,6 +138,8 @@ public class MainWindow extends UiPart<Stage> {
         setDate();
 
         setGreeting();
+
+        setWeekAndTopic();
     }
 
     public Stage getPrimaryStage() {
@@ -217,9 +230,9 @@ public class MainWindow extends UiPart<Stage> {
      * Sets the current date.
      */
     private void setDate() {
-        LocalDate localDate = LocalDate.now();
+        LocalDate currentDate = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
-        String formattedDate = localDate.format(formatter);
+        String formattedDate = currentDate.format(formatter);
         date.setText(formattedDate);
     }
 
@@ -228,6 +241,29 @@ public class MainWindow extends UiPart<Stage> {
      */
     private void setGreeting() {
         greeting.textProperty().bind(logic.getGreeting());
+    }
+
+    /**
+     * Sets the week and topic
+     */
+    private void setWeekAndTopic() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy");
+        LocalDate semesterStartDate = LocalDate.parse(SEMESTER_START_DATE, formatter);
+        LocalDate currentDate = LocalDate.now();
+
+        long daysBetween = ChronoUnit.DAYS.between(semesterStartDate, currentDate);
+
+        int weekNumber = (int) daysBetween / 7;
+
+        Topic topic = new Topics().getTopic(weekNumber);
+
+        week.setText("Week " + weekNumber + ": ");
+
+        if (topic.isEmpty()) {
+            this.topic.setText("No topic");
+        } else {
+            this.topic.setText(topic.getOutline());
+        }
     }
 
     /**
@@ -271,7 +307,7 @@ public class MainWindow extends UiPart<Stage> {
     @FXML
     private void handleSourceAcademy() {
         try {
-            Desktop.getDesktop().browse(URI.create("https://sourceacademy.nus.edu.sg/login"));
+            Desktop.getDesktop().browse(URI.create(SOURCE_ACADEMY_URL));
         } catch (IOException ex) {
             System.out.println(ex);
         }
@@ -284,7 +320,7 @@ public class MainWindow extends UiPart<Stage> {
     private void handleUserGuide() {
         try {
             Desktop.getDesktop()
-                    .browse(URI.create("https://ay2021s1-cs2103t-w11-2.github.io/tp/UserGuide.html#quick-start"));
+                    .browse(URI.create(USER_GUIDE_URL));
         } catch (IOException ex) {
             System.out.println(ex);
         }

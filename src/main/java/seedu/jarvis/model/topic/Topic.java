@@ -37,4 +37,12 @@ public class Topic {
     public String getOutline() {
         return outline;
     }
+
+    /**
+     * Checks whether the Topic object is empty
+     * @return true if Topic is empty
+     */
+    public boolean isEmpty() {
+        return this.week.isEmpty() && this.outline.isEmpty();
+    }
 }
