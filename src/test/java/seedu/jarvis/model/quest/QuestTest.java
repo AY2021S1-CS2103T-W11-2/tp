@@ -2,47 +2,55 @@ package seedu.jarvis.model.quest;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.jarvis.testutil.TypicalQuests.TEST_QUEST;
-import static seedu.jarvis.testutil.TypicalQuests.TEST_QUEST_COPY;
-import static seedu.jarvis.testutil.TypicalQuests.TEST_QUEST_DEADLINE;
-import static seedu.jarvis.testutil.TypicalQuests.TEST_QUEST_DIFF;
-import static seedu.jarvis.testutil.TypicalQuests.TEST_QUEST_TITLE;
+import static seedu.jarvis.testutil.TypicalQuests.COLORFUL_CARPETS;
+import static seedu.jarvis.testutil.TypicalQuests.RUNIC_CARPETS;
 
 import org.junit.jupiter.api.Test;
+
+import seedu.jarvis.testutil.QuestBuilder;
 
 class QuestTest {
 
     @Test
     void getTitle() {
-        assertTrue(TEST_QUEST.getTitle().equals(TEST_QUEST_TITLE));
+        assertTrue(RUNIC_CARPETS.getTitle().equals("Runic Carpets"));
     }
 
     @Test
     void getDeadline() {
-        assertTrue(TEST_QUEST.getDeadline().equals(TEST_QUEST_DEADLINE));
+        assertTrue(RUNIC_CARPETS.getDeadline().equals("Due: 26th August, 23:59"));
     }
 
     @Test
     void testEquals() {
         // same values -> return true
-        assertTrue(TEST_QUEST.equals(TEST_QUEST_COPY));
+        assertTrue(RUNIC_CARPETS.equals(RUNIC_CARPETS));
 
         // same object -> return true
-        assertTrue(TEST_QUEST.equals(TEST_QUEST));
+        assertTrue(RUNIC_CARPETS.equals(RUNIC_CARPETS));
 
         // null -> returns false
-        assertFalse(TEST_QUEST.equals(null));
+        assertFalse(RUNIC_CARPETS.equals(null));
 
         // different type -> returns false
-        assertFalse(TEST_QUEST.equals(5));
+        assertFalse(RUNIC_CARPETS.equals(5));
 
-        // different mission -> returns false
-        assertFalse(TEST_QUEST.equals(TEST_QUEST_DIFF));
+        // different quest -> returns false
+        assertFalse(RUNIC_CARPETS.equals(COLORFUL_CARPETS));
+
+        // different deadline -> returns false
+        Quest editedRunicCarpets = new QuestBuilder(RUNIC_CARPETS)
+                .withDeadline("Due: 20th October, 23:59").build();
+        assertFalse(editedRunicCarpets.equals(RUNIC_CARPETS));
+
+        // different isGraded -> return false
+        Quest editedColorfulCarpets = new QuestBuilder(COLORFUL_CARPETS).withIsGraded(false).build();
+        assertFalse(editedColorfulCarpets.equals(COLORFUL_CARPETS));
     }
 
     @Test
     void testToString() {
-        String questTestToString = TEST_QUEST.getTitle() + " Deadline: " + TEST_QUEST.getDeadline();
-        System.out.println(TEST_QUEST.toString().equals(questTestToString));
+        String questTestToString = RUNIC_CARPETS.getTitle() + " Deadline: " + RUNIC_CARPETS.getDeadline();
+        System.out.println(RUNIC_CARPETS.toString().equals(questTestToString));
     }
 }

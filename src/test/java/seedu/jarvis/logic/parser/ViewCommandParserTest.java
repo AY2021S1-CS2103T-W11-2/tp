@@ -12,7 +12,6 @@ import seedu.jarvis.logic.commands.view.ViewCommand;
 import seedu.jarvis.logic.commands.view.ViewMissionDeadlineCommand;
 import seedu.jarvis.logic.commands.view.ViewOneStudentCommand;
 import seedu.jarvis.logic.parser.exceptions.ParseException;
-import seedu.jarvis.model.flag.Flag;
 import seedu.jarvis.model.student.Name;
 import seedu.jarvis.testutil.TypicalStudents;
 
@@ -31,7 +30,8 @@ public class ViewCommandParserTest {
     @Test
     public void parse_invalidCommandFormat_throwsParseException() {
         ViewCommandParser parser = new ViewCommandParser();
-        assertParseFailure(parser, "-2", Flag.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, "-2", String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                ViewCommand.MESSAGE_USAGE));
     }
 
     @Test
