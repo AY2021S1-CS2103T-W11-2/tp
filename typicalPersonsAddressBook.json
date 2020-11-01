@@ -49,6 +49,26 @@
     "deadline": "Deadline is over",
     "isGraded": false
   } ],
-  "quests": [ ],
+  "quests": [ {
+    "title": "Runic Carpets",
+    "deadline": "Due: 26th August, 23:59",
+    "isGraded": false
+  }, {
+    "title": "Colorful Carpets",
+    "deadline": "Due: 3rd October, 23:59",
+    "isGraded": true
+  }, {
+    "title": "Functional Expressionism",
+    "deadline": "Due: 10th October, 23:59\"",
+    "isGraded": true
+  }, {
+    "title": "Cardioid Arrest",
+    "deadline": "Due: 20th October, 23:59",
+    "isGraded": false
+  }, {
+    "title": "Curvaceous Wizardry",
+    "deadline": "Deadline is over",
+    "isGraded": false
+  } ],
   "tasks": [ ]
 }
