@@ -28,7 +28,27 @@
     "telegram": "9482442",
     "email": "anna@example.com"
   } ],
-  "missions": [ ],
+  "missions": [ {
+    "title": "Fractal Dimensions",
+    "deadline": "Due: 16th October, 23:59",
+    "isGraded": false
+  }, {
+    "title": "Musical Notes",
+    "deadline": "Due: 25th October, 23:59",
+    "isGraded": true
+  }, {
+    "title": "Reuse Pairs",
+    "deadline": "Due: 1st November, 23:59",
+    "isGraded": false
+  }, {
+    "title": "Streams",
+    "deadline": "Due: 9th November, 23:59",
+    "isGraded": false
+  }, {
+    "title": "Stream Anomaly",
+    "deadline": "Deadline is over",
+    "isGraded": false
+  } ],
   "quests": [ ],
   "tasks": [ ]
 }
