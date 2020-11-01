@@ -61,6 +61,7 @@ public class JsonAddressBookStorage implements AddressBookStorage {
 
     @Override
     public void saveAddressBook(ReadOnlyAddressBook addressBook) throws IOException {
+        System.out.println("file path in jsonaddressbookstorage " + filePath.toString());
         saveAddressBook(addressBook, filePath);
     }
 
