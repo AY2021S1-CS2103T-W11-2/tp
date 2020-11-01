@@ -39,7 +39,7 @@ public class EditCommandParser implements Parser<EditCommand> {
         String trimmedArgs = args.trim();
         if (trimmedArgs.isEmpty()) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, ViewCommand.MESSAGE_USAGE));
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCommand.MESSAGE_USAGE));
         }
 
         // split the string trimmedArgs with regex of one or more whitespace characters.
@@ -52,7 +52,7 @@ public class EditCommandParser implements Parser<EditCommand> {
             commandFlag = ParserUtil.parseFlag(inputsAfterCommandType[0]);
         } catch (ParseException ex) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, ViewCommand.MESSAGE_USAGE));
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCommand.MESSAGE_USAGE));
         }
 
         String editArgs = String.join(" ", Arrays.copyOfRange(inputsAfterCommandType, 1,

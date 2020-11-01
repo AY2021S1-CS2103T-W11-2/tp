@@ -27,7 +27,9 @@ public abstract class EditCommand extends Command {
             + PREFIX_EMAIL + "johndoe@example.com\n"
             + "edit -l "
             + "[" + PREFIX_USERNAME + "USERNAME] "
-            + "[" + PREFIX_PASSWORD + "PASSWORD] ";
+            + "[" + PREFIX_PASSWORD + "PASSWORD]\n"
+            + "Example: " + COMMAND_WORD + PREFIX_USERNAME
+            + "nusstu\\e1234567 " + PREFIX_PASSWORD + "password";
 
     @Override
     public abstract CommandResult execute(Model model) throws CommandException;
