@@ -467,9 +467,15 @@ Exits the program.
 <br>**Format: `exit`**
 
 ### 7.7 Saving the data
-(Peirong)
+(Wiline)
 
-JARVIS data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+JARVIS data are saved in the file `jarvis.json` automatically after any command that changes the data. There is no need to save manually.
+
+<div markdown="block" class="alert alert-info">
+
+Note that only `Student`, `Consultation`, `Mastery Check` and `Task` data are saved to the hard drive since `Mission` and `Quest` data
+are likely to change frequently.
+</div>
 
 --------------------------------------------------------------------------------------------------------------------
 
